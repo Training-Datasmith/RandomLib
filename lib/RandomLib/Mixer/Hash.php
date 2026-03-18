@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -29,6 +31,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Mixer;
 
 use SecurityLib\Strength;
@@ -50,7 +53,6 @@ use SecurityLib\Util;
  */
 class Hash extends \RandomLib\AbstractMixer
 {
-
     /**
      * @var string The hash instance to use
      */

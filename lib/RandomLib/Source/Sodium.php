@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -30,6 +32,7 @@
  * @link       https://paragonie.com/book/pecl-libsodium
  * @link       http://pecl.php.net/package/libsodium
  */
+
 namespace RandomLib\Source;
 
 use SecurityLib\Strength;
@@ -48,7 +51,6 @@ use SecurityLib\Strength;
  */
 class Sodium extends \RandomLib\AbstractSource
 {
-
     /**
      * A property that may be forcibly set to `false` in the constructor, for
      * the purpose of testing this source

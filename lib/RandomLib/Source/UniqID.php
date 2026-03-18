@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -27,6 +29,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Source;
 
 use SecurityLib\Strength;
@@ -47,7 +50,6 @@ use SecurityLib\Util;
  */
 class UniqID extends \RandomLib\AbstractSource
 {
-
     /**
      * Return an instance of Strength indicating the strength of the source
      *

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -8,6 +10,7 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Mixer;
 
 use SecurityLib\Strength;
@@ -16,18 +19,18 @@ class HashTest extends \PHPUnit_Framework_TestCase
 {
     public static function provideMix()
     {
-        $data = array(
-            array(array(), ''),
-            array(array('1', '1'), '0d'),
-            array(array('a'), '61'),
+        $data = [
+            [[], ''],
+            [['1', '1'], '0d'],
+            [['a'], '61'],
             // This expects 'b' because of how the mock hmac function works
-            array(array('a', 'b'), '9a'),
-            array(array('aa', 'ba'), '6e84'),
-            array(array('ab', 'bb'), 'b0cb'),
-            array(array('aa', 'bb'), 'ae8d'),
-            array(array('aa', 'bb', 'cc'), 'a14c'),
-            array(array('aabbcc', 'bbccdd', 'ccddee'), 'a8aff3939934'),
-        );
+            [['a', 'b'], '9a'],
+            [['aa', 'ba'], '6e84'],
+            [['ab', 'bb'], 'b0cb'],
+            [['aa', 'bb'], 'ae8d'],
+            [['aa', 'bb', 'cc'], 'a14c'],
+            [['aabbcc', 'bbccdd', 'ccddee'], 'a8aff3939934'],
+        ];
 
         return $data;
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -23,6 +25,7 @@
  *
  * @version   Build @@version@@
  */
+
 namespace RandomLib;
 
 use SecurityLib\Util;
@@ -39,7 +42,6 @@ use SecurityLib\Util;
  */
 abstract class AbstractMixer implements \RandomLib\Mixer
 {
-
     /**
      * Get the block size (the size of the individual blocks used for the mixing)
      *
@@ -137,7 +139,7 @@ abstract class AbstractMixer implements \RandomLib\Mixer
     {
         $start = Util::safeStrlen($string);
         $inc = Util::safeStrlen($character);
-        for ($i = $start; $i < $size; $i+= $inc) {
+        for ($i = $start; $i < $size; $i += $inc) {
             $string = $string . $character;
         }
 

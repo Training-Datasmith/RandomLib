@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -8,63 +10,64 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
+
 namespace RandomLib;
 
 class GeneratorTest extends \PHPUnit_Framework_TestCase
 {
     protected $generator = null;
     protected $mixer = null;
-    protected $sources = array();
+    protected $sources = [];
 
     public static function provideGenerate()
     {
-        return array(
-            array(0, ''),
-            array(1, chr(0)),
-            array(2, chr(1) . chr(1)),
-            array(3, chr(2) . chr(0) . chr(2)),
-            array(4, chr(3) . chr(3) . chr(3) . chr(3)),
-        );
+        return [
+            [0, ''],
+            [1, chr(0)],
+            [2, chr(1) . chr(1)],
+            [3, chr(2) . chr(0) . chr(2)],
+            [4, chr(3) . chr(3) . chr(3) . chr(3)],
+        ];
     }
 
     public static function provideGenerateInt()
     {
-        return array(
-            array(1, 1, 1),
-            array(0, 1, 0),
-            array(0, 255, 0),
-            array(400, 655, 400),
-            array(0, 65535, 257),
-            array(65535, 131070, 65792),
-            array(0, 16777215, (2<<16) + 2),
-            array(-10, 0, -10),
-            array(-655, -400, -655),
-            array(-131070, -65535, -130813),
-        );
+        return [
+            [1, 1, 1],
+            [0, 1, 0],
+            [0, 255, 0],
+            [400, 655, 400],
+            [0, 65535, 257],
+            [65535, 131070, 65792],
+            [0, 16777215, (2 << 16) + 2],
+            [-10, 0, -10],
+            [-655, -400, -655],
+            [-131070, -65535, -130813],
+        ];
     }
 
     public static function provideGenerateIntRangeTest()
     {
-        return array(
-            array(0, 0),
-            array(0, 1),
-            array(1, 10000),
-            array(100000, \PHP_INT_MAX),
-        );
+        return [
+            [0, 0],
+            [0, 1],
+            [1, 10000],
+            [100000, \PHP_INT_MAX],
+        ];
     }
 
     public static function provideGenerateStringTest()
     {
-        return array(
-            array(0, 'ab', ''),
-            array(1, 'ab', 'a'),
-            array(1, 'a', ''),
-            array(2, 'ab', 'bb'),
-            array(3, 'abc', 'cac'),
-            array(8, '0123456789abcdef', '77777777'),
-            array(16, '0123456789abcdef', 'ffffffffffffffff'),
-            array(16, '', 'DDDDDDDDDDDDDDDD'),
-        );
+        return [
+            [0, 'ab', ''],
+            [1, 'ab', 'a'],
+            [1, 'a', ''],
+            [2, 'ab', 'bb'],
+            [3, 'abc', 'cac'],
+            [8, '0123456789abcdef', '77777777'],
+            [16, '0123456789abcdef', 'ffffffffffffffff'],
+            [16, '', 'DDDDDDDDDDDDDDDD'],
+        ];
     }
 
     public function setUp()
@@ -72,27 +75,29 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $source1 = $this->getMock('RandomLib\Source');
         $source1->expects($this->any())
             ->method('generate')
-            ->will($this->returnCallback(function ($size) {
-                $r = '';
-                for ($i = 0; $i < $size; $i++) {
-                    $r .= chr($i);
-                }
+            ->will($this->returnCallback(
+                function ($size) {
+                    $r = '';
+                    for ($i = 0; $i < $size; $i++) {
+                        $r .= chr($i);
+                    }
 
-                return $r;
-            }
-        ));
+                    return $r;
+                }
+            ));
         $source2 = $this->getMock('RandomLib\Source');
         $source2->expects($this->any())
             ->method('generate')
-            ->will($this->returnCallback(function ($size) {
-                $r = '';
-                for ($i = $size - 1; $i >= 0; $i--) {
-                    $r .= chr($i);
-                }
+            ->will($this->returnCallback(
+                function ($size) {
+                    $r = '';
+                    for ($i = $size - 1; $i >= 0; $i--) {
+                        $r .= chr($i);
+                    }
 
-                return $r;
-            }
-        ));
+                    return $r;
+                }
+            ));
 
         $this->mixer = $this->getMock('RandomLib\Mixer');
         $this->mixer->expects($this->any())
@@ -112,7 +117,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
                 );
             }));
 
-        $this->sources = array($source1, $source2);
+        $this->sources = [$source1, $source2];
         $this->generator = new Generator($this->sources, $this->mixer);
     }
 
@@ -165,7 +170,6 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $n = $this->generator->generateInt(-1, PHP_INT_MAX);
     }
 
-    
     public function testGenerateIntLargeTest()
     {
         $bits = 30;
@@ -177,7 +181,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $n = $this->generator->generateInt(0, (int) pow(2, $bits));
         $this->assertEquals($expected, $n);
     }
-    
+
     /**
      * @dataProvider provideGenerateStringTest
      */
@@ -195,7 +199,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
     public function testGenerateLargeRange()
     {
         if (PHP_INT_MAX < pow(2, 32)) {
-            $this->markTestSkipped("Only test on 64 bit platforms");
+            $this->markTestSkipped('Only test on 64 bit platforms');
         }
         $this->assertEquals(506381209866536711, $this->generator->generateInt(0, PHP_INT_MAX));
     }

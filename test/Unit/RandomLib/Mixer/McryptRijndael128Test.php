@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -8,6 +10,7 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Mixer;
 
 use SecurityLib\Strength;
@@ -16,17 +19,17 @@ class McryptRijndael128Test extends \PHPUnit_Framework_TestCase
 {
     public static function provideMix()
     {
-        $data = array(
-            array(array(), ''),
-            array(array('', ''), ''),
-            array(array('a'), '61'),
-            array(array('a', 'b'), '6a'),
-            array(array('aa', 'ba'), '688d'),
-            array(array('ab', 'bb'), 'f8bc'),
-            array(array('aa', 'bb'), 'a0f3'),
-            array(array('aa', 'bb', 'cc'), '87c3'),
-            array(array('aabbcc', 'bbccdd', 'ccddee'), '7cf2273e46c7'),
-        );
+        $data = [
+            [[], ''],
+            [['', ''], ''],
+            [['a'], '61'],
+            [['a', 'b'], '6a'],
+            [['aa', 'ba'], '688d'],
+            [['ab', 'bb'], 'f8bc'],
+            [['aa', 'bb'], 'a0f3'],
+            [['aa', 'bb', 'cc'], '87c3'],
+            [['aabbcc', 'bbccdd', 'ccddee'], '7cf2273e46c7'],
+        ];
 
         return $data;
     }

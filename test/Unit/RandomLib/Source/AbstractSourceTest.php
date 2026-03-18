@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -8,6 +10,7 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Source;
 
 use SecurityLib\Strength;
@@ -35,10 +38,10 @@ abstract class AbstractSourceTest extends \PHPUnit_Framework_TestCase
 
     public static function provideGenerate()
     {
-        $data = array();
+        $data = [];
         for ($i = 0; $i < 100; $i += 5) {
             $not = $i > 0 ? str_repeat(chr(0), $i) : chr(0);
-            $data[] = array($i, $not);
+            $data[] = [$i, $not];
         }
 
         return $data;

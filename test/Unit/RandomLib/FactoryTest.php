@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -8,6 +10,7 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
+
 namespace RandomLib;
 
 use SecurityLib\Strength;
@@ -24,10 +27,10 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     {
         $factory = new Factory();
         $generator = $factory->getGenerator(new Strength(Strength::VERYLOW));
-        $mixer = call_user_func(array(
+        $mixer = call_user_func([
             get_class($generator->getMixer()),
             'getStrength',
-        ));
+        ]);
         $this->assertTrue($mixer->compare(new Strength(Strength::VERYLOW)) <= 0);
     }
 
@@ -42,13 +45,13 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         $factory = new Factory();
         $generator = $factory->getMediumStrengthGenerator();
         $this->assertTrue($generator instanceof Generator);
-        $mixer = call_user_func(array(
+        $mixer = call_user_func([
             get_class($generator->getMixer()),
             'getStrength',
-        ));
+        ]);
         $this->assertTrue($mixer->compare(new Strength(Strength::MEDIUM)) <= 0);
         foreach ($generator->getSources() as $source) {
-            $strength = call_user_func(array(get_class($source), 'getStrength'));
+            $strength = call_user_func([get_class($source), 'getStrength']);
             $this->assertTrue($strength->compare(new Strength(Strength::MEDIUM)) >= 0);
         }
     }
@@ -62,7 +65,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         $factory = new Factory();
         $sources = new \ReflectionProperty($factory, 'sources');
         $sources->setAccessible(true);
-        $sources->setValue($factory, array());
+        $sources->setValue($factory, []);
         $factory->getMediumStrengthGenerator();
     }
 }

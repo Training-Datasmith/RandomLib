@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -26,6 +28,7 @@
  * @license    http://opensource.org/licenses/bsd-license.php New BSD License
  * @license    http://www.gnu.org/licenses/lgpl-2.1.html LGPL v 2.1
  */
+
 namespace RandomLibTest;
 
 ini_set('memory_limit', '1G');

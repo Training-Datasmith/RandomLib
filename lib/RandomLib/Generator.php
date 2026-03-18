@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -26,6 +28,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib;
 
 /**
@@ -41,66 +44,65 @@ namespace RandomLib;
  */
 class Generator
 {
-
     /**
      * @const Flag for uppercase letters
      */
-    const CHAR_UPPER = 1;
+    public const CHAR_UPPER = 1;
 
     /**
      * @const Flag for lowercase letters
      */
-    const CHAR_LOWER = 2;
+    public const CHAR_LOWER = 2;
 
     /**
      * @const Flag for alpha characters (combines UPPER + LOWER)
      */
-    const CHAR_ALPHA = 3; // CHAR_UPPER | CHAR_LOWER
+    public const CHAR_ALPHA = 3; // CHAR_UPPER | CHAR_LOWER
 
     /**
      * @const Flag for digits
      */
-    const CHAR_DIGITS = 4;
+    public const CHAR_DIGITS = 4;
 
     /**
      * @const Flag for alpha numeric characters
      */
-    const CHAR_ALNUM = 7; // CHAR_ALPHA | CHAR_DIGITS
+    public const CHAR_ALNUM = 7; // CHAR_ALPHA | CHAR_DIGITS
 
     /**
      * @const Flag for uppercase hexadecimal symbols
      */
-    const CHAR_UPPER_HEX = 12; // 8 | CHAR_DIGITS
+    public const CHAR_UPPER_HEX = 12; // 8 | CHAR_DIGITS
 
     /**
      * @const Flag for lowercase hexidecimal symbols
      */
-    const CHAR_LOWER_HEX = 20; // 16 | CHAR_DIGITS
+    public const CHAR_LOWER_HEX = 20; // 16 | CHAR_DIGITS
 
     /**
      * @const Flag for base64 symbols
      */
-    const CHAR_BASE64 = 39; // 32 | CHAR_ALNUM
+    public const CHAR_BASE64 = 39; // 32 | CHAR_ALNUM
 
     /**
      * @const Flag for additional symbols accessible via the keyboard
      */
-    const CHAR_SYMBOLS = 64;
+    public const CHAR_SYMBOLS = 64;
 
     /**
      * @const Flag for brackets
      */
-    const CHAR_BRACKETS = 128;
+    public const CHAR_BRACKETS = 128;
 
     /**
      * @const Flag for punctuation marks
      */
-    const CHAR_PUNCT = 256;
+    public const CHAR_PUNCT = 256;
 
     /**
      * @const Flag for upper/lower-case and digits but without "B8G6I1l|0OQDS5Z2"
      */
-    const EASY_TO_READ = 512;
+    public const EASY_TO_READ = 512;
 
     /**
      * @var Mixer The mixing strategy to use for this generator instance
@@ -110,12 +112,12 @@ class Generator
     /**
      * @var array An array of random number sources to use for this generator
      */
-    protected $sources = array();
+    protected $sources = [];
 
     /**
      * @var array The different characters, by Flag
      */
-    protected $charArrays = array(
+    protected $charArrays = [
         self::CHAR_UPPER     => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
         self::CHAR_LOWER     => 'abcdefghijklmnopqrstuvwxyz',
         self::CHAR_DIGITS    => '0123456789',
@@ -125,14 +127,14 @@ class Generator
         self::CHAR_SYMBOLS   => '!"#$%&\'()* +,-./:;<=>?@[\]^_`{|}~',
         self::CHAR_BRACKETS  => '()[]{}<>',
         self::CHAR_PUNCT     => ',.;:',
-    );
+    ];
 
     /**
      * @internal
      * @private
      * @const string Ambiguous characters for "Easy To Read" sets
      */
-    const AMBIGUOUS_CHARS = 'B8G6I1l|0OQDS5Z2()[]{}:;,.';
+    public const AMBIGUOUS_CHARS = 'B8G6I1l|0OQDS5Z2()[]{}:;,.';
 
     /**
      * Build a new instance of the generator
@@ -171,7 +173,7 @@ class Generator
      */
     public function generate($size)
     {
-        $seeds = array();
+        $seeds = [];
         foreach ($this->sources as $source) {
             $seeds[] = $source->generate($size);
         }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -22,6 +24,7 @@
  * @license    http://opensource.org/licenses/bsd-license.php New BSD License
  * @license    http://www.gnu.org/licenses/lgpl-2.1.html LGPL v 2.1
  */
+
 namespace RandomLibtest\Mocks;
 
 /**
@@ -34,18 +37,18 @@ namespace RandomLibtest\Mocks;
  */
 class AbstractMock
 {
-    protected $callbacks = array();
+    protected $callbacks = [];
 
     public static function init()
     {
     }
 
-    public function __construct(array $callbacks = array())
+    public function __construct(array $callbacks = [])
     {
         $this->callbacks = $callbacks;
     }
 
-    public function __call($name, array $args = array())
+    public function __call($name, array $args = [])
     {
         if (isset($this->callbacks[$name])) {
             return call_user_func_array($this->callbacks[$name], $args);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -25,6 +27,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib;
 
 use SecurityLib\Strength;
@@ -41,16 +44,15 @@ use SecurityLib\Strength;
  */
 class Factory extends \SecurityLib\AbstractFactory
 {
-
     /**
      * @var array A list of available random number mixing strategies
      */
-    protected $mixers = array();
+    protected $mixers = [];
 
     /**
      * @var array A list of available random number sources
      */
-    protected $sources = array();
+    protected $sources = [];
 
     /**
      * Build a new instance of the factory, loading core mixers and sources
@@ -193,7 +195,7 @@ class Factory extends \SecurityLib\AbstractFactory
      */
     protected function findSources(\SecurityLib\Strength $strength)
     {
-        $sources = array();
+        $sources = [];
         foreach ($this->getSources() as $source) {
             if ($strength->compare($source::getStrength()) <= 0 && $source::isSupported()) {
                 $sources[] = new $source();
@@ -251,7 +253,7 @@ class Factory extends \SecurityLib\AbstractFactory
         $this->loadFiles(
             __DIR__ . '/Mixer',
             __NAMESPACE__ . '\\Mixer\\',
-            array($this, 'registerMixer')
+            [$this, 'registerMixer']
         );
     }
 
@@ -265,7 +267,7 @@ class Factory extends \SecurityLib\AbstractFactory
         $this->loadFiles(
             __DIR__ . '/Source',
             __NAMESPACE__ . '\\Source\\',
-            array($this, 'registerSource')
+            [$this, 'registerSource']
         );
     }
 }

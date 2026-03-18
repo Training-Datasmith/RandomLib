@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -26,6 +28,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Source;
 
 use SecurityLib\Strength;
@@ -44,7 +47,6 @@ use SecurityLib\Strength;
  */
 class OpenSSL extends \RandomLib\AbstractSource
 {
-
     /**
      * Return an instance of Strength indicating the strength of the source
      *
@@ -60,7 +62,7 @@ class OpenSSL extends \RandomLib\AbstractSource
         if (PHP_VERSION_ID >= 50612) {
             return new Strength(Strength::HIGH);
         }
-        
+
         /**
          * Prior to PHP 5.5.28 (see https://bugs.php.net/bug.php?id=70014) the "openssl_random_pseudo_bytes"
          * was using "RAND_pseudo_bytes" (predictable) instead of "RAND_bytes" (unpredictable).
@@ -69,7 +71,7 @@ class OpenSSL extends \RandomLib\AbstractSource
         if (PHP_VERSION_ID >= 50528 && PHP_VERSION_ID < 50600) {
             return new Strength(Strength::HIGH);
         }
-        
+
         /**
          * Prior to PHP 5.4.44 (see https://bugs.php.net/bug.php?id=70014) the "openssl_random_pseudo_bytes"
          * was using "RAND_pseudo_bytes" (predictable) instead of "RAND_bytes" (unpredictable).
@@ -78,7 +80,7 @@ class OpenSSL extends \RandomLib\AbstractSource
         if (PHP_VERSION_ID >= 50444 && PHP_VERSION_ID < 50500) {
             return new Strength(Strength::HIGH);
         }
-        
+
         return new Strength(Strength::MEDIUM);
     }
 

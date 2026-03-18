@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -28,6 +30,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Source;
 
 use SecurityLib\Strength;
@@ -49,7 +52,6 @@ use SecurityLib\Util;
  */
 final class MicroTime extends \RandomLib\AbstractSource
 {
-
     /**
      * A static counter to ensure unique hashes and prevent state collisions
      *
@@ -82,9 +84,9 @@ final class MicroTime extends \RandomLib\AbstractSource
         $state      .= count(debug_backtrace(false));
         self::$state = hash('sha512', $state, true);
         if (is_null(self::$counter)) {
-            list(, self::$counter) = unpack("i", Util::safeSubstr(self::$state, 0, 4));
+            list(, self::$counter) = unpack('i', Util::safeSubstr(self::$state, 0, 4));
             $seed = $this->generate(Util::safeStrlen(dechex(PHP_INT_MAX)));
-            list(, self::$counter) = unpack("i", $seed);
+            list(, self::$counter) = unpack('i', $seed);
         }
     }
 

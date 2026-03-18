@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -17,30 +19,30 @@ class Vectors_Random_GeneratorTest extends PHPUnit_Framework_TestCase
 {
     public static function provideGenerateInt()
     {
-        return array(
+        return [
             // First, lets test each offset based range
-            array(0, 7),
-            array(0, 15),
-            array(0, 31),
-            array(0, 63),
-            array(0, 127),
-            array(0, 255),
-            array(0, 511),
-            array(0, 1023),
+            [0, 7],
+            [0, 15],
+            [0, 31],
+            [0, 63],
+            [0, 127],
+            [0, 255],
+            [0, 511],
+            [0, 1023],
             // Let's try a range not starting at 0
-            array(8, 15),
+            [8, 15],
             // Let's try a range with a negative number
-            array(-18, -11),
+            [-18, -11],
             // Let's try a non-power-of-2 range
-            array(10, 100),
+            [10, 100],
             // Finally, let's try two large numbers
-            array(100000, 100007),
-            array(100000000, 100002047),
+            [100000, 100007],
+            [100000000, 100002047],
             // Now, let's force a few loops by setting a valid offset
-            array(0, 5, 2),
-            array(0, 9, 5),
-            array(0, 27, 4),
-        );
+            [0, 5, 2],
+            [0, 9, 5],
+            [0, 27, 4],
+        ];
     }
 
     public static function provideGenerators()
@@ -48,9 +50,9 @@ class Vectors_Random_GeneratorTest extends PHPUnit_Framework_TestCase
         $factory = new \RandomLib\Factory();
         $generator = $factory->getLowStrengthGenerator();
         $sources = $generator->getSources();
-        $ret = array();
+        $ret = [];
 
-        $ret[] = array(new Generator($sources, new \RandomLib\Mixer\Hash()), 10000, 'hash');
+        $ret[] = [new Generator($sources, new \RandomLib\Mixer\Hash()), 10000, 'hash'];
 
         return $ret;
     }
@@ -144,24 +146,24 @@ class Vectors_Random_GeneratorTest extends PHPUnit_Framework_TestCase
 
     public function getGenerator($random)
     {
-        $source1  = new Source(array(
+        $source1  = new Source([
             'generate' => function ($size) use (&$random) {
                 $ret = pack('N', $random);
                 $random--;
 
                 return substr($ret, -1 * $size);
             },
-        ));
-        $sources = array($source1);
-        $mixer   = new Mixer(array(
-            'mix'=> function (array $sources) {
+        ]);
+        $sources = [$source1];
+        $mixer   = new Mixer([
+            'mix' => function (array $sources) {
                 if (empty($sources)) {
                     return '';
                 }
 
                 return array_pop($sources);
             },
-        ));
+        ]);
 
         return new Generator($sources, $mixer);
     }

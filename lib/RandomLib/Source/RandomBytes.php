@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -26,6 +28,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Source;
 
 use SecurityLib\Strength;
@@ -43,7 +46,6 @@ use SecurityLib\Strength;
  */
 class RandomBytes extends \RandomLib\AbstractSource
 {
-
     /**
      * If the source is currently available.
      * Reasons might be because the library is not installed

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -24,6 +26,7 @@
  *
  * @version    Build @@version@@
  */
+
 namespace RandomLib\Mixer;
 
 use RandomLib\AbstractMcryptMixer;
