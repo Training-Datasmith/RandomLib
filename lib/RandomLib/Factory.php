@@ -54,8 +54,6 @@ class Factory extends \SecurityLib\AbstractFactory
 
     /**
      * Build a new instance of the factory, loading core mixers and sources
-     *
-     * @return void
      */
     public function __construct()
     {

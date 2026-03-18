@@ -143,16 +143,4 @@ abstract class AbstractMixer implements \RandomLib\Mixer
 
         return Util::safeSubstr($string, 0, $size);
     }
-
-    private function str_split($string, $size)
-    {
-        $blocks = array();
-        $length = Util::safeStrlen($string);
-        $parts = ceil($length / $size);
-        for ($i = 0; $i < $parts; $i++) {
-            $blocks[] = Util::safeSubstr($string, $i * $length, $length);
-        }
-
-        return $blocks;
-    }
 }

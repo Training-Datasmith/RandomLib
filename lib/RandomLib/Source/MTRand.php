@@ -59,9 +59,8 @@ class MTRand extends \RandomLib\AbstractSource
         // Detect if Suhosin Hardened PHP patch is applied
         if (defined('S_ALL')) {
             return new Strength(Strength::MEDIUM);
-        } else {
-            return new Strength(Strength::LOW);
         }
+        return new Strength(Strength::LOW);
     }
 
     /**

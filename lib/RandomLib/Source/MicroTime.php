@@ -55,7 +55,7 @@ final class MicroTime extends \RandomLib\AbstractSource
      *
      * @var int A counter
      */
-    private static $counter = null;
+    private static $counter;
 
     /**
      * The current state of the random number generator.

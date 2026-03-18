@@ -54,14 +54,12 @@ class Hash extends \RandomLib\AbstractMixer
     /**
      * @var string The hash instance to use
      */
-    protected $hash = null;
+    protected $hash;
 
     /**
      * Build the hash mixer
      *
      * @param string $hash The hash instance to use (defaults to sha512)
-     *
-     * @return void
      */
     public function __construct($hash = 'sha512')
     {

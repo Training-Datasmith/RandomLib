@@ -105,7 +105,7 @@ class Generator
     /**
      * @var Mixer The mixing strategy to use for this generator instance
      */
-    protected $mixer = null;
+    protected $mixer;
 
     /**
      * @var array An array of random number sources to use for this generator
@@ -189,13 +189,14 @@ class Generator
      */
     public function generateInt($min = 0, $max = PHP_INT_MAX)
     {
-        $tmp   = (int) max($max, $min);
-        $min   = (int) min($max, $min);
+        $tmp   = max($max, $min);
+        $min   = min($max, $min);
         $max   = $tmp;
         $range = $max - $min;
         if ($range == 0) {
             return $max;
-        } elseif ($range > PHP_INT_MAX || is_float($range) || $range < 0) {
+        }
+        if ($range > PHP_INT_MAX || is_float($range) || $range < 0) {
             /**
              * This works, because PHP will auto-convert it to a float at this point,
              * But on 64 bit systems, the float won't have enough precision to
@@ -264,7 +265,8 @@ class Generator
         }
         if ($length == 0 || strlen($characters) == 1) {
             return '';
-        } elseif (empty($characters)) {
+        }
+        if (empty($characters)) {
             // Default to base 64
             $characters = $this->expandCharacterSets(self::CHAR_BASE64);
         }
