@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The Microtime Random Number Source
  *
@@ -30,12 +28,10 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Source;
 
-namespace RandomLib\Source;
-
-use SecurityLib\Strength;
-use SecurityLib\Util;
-
+use Security_Lib\Strength;
+use Security_Lib\Util;
 /**
  * The Microtime Random Number Source
  *
@@ -50,7 +46,7 @@ use SecurityLib\Util;
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  * @codeCoverageIgnore
  */
-final class MicroTime extends \RandomLib\AbstractSource
+final class Micro_Time extends \Random_Lib\Abstract_Source
 {
     /**
      * A static counter to ensure unique hashes and prevent state collisions
@@ -58,14 +54,12 @@ final class MicroTime extends \RandomLib\AbstractSource
      * @var int A counter
      */
     private static $counter;
-
     /**
      * The current state of the random number generator.
      *
      * @var string The state of the PRNG
      */
     private static $state = '';
-
     public function __construct()
     {
         $state = self::$state;
@@ -78,18 +72,17 @@ final class MicroTime extends \RandomLib\AbstractSource
         if (function_exists('hphp_get_thread_id')) {
             $state .= hphp_get_thread_id();
         }
-        $state      .= getmypid() . memory_get_usage();
-        $state      .= serialize($_ENV);
-        $state      .= serialize($_SERVER);
-        $state      .= count(debug_backtrace(false));
+        $state .= getmypid() . memory_get_usage();
+        $state .= serialize($_ENV);
+        $state .= serialize($_SERVER);
+        $state .= count(debug_backtrace(false));
         self::$state = hash('sha512', $state, true);
         if (is_null(self::$counter)) {
-            list(, self::$counter) = unpack('i', Util::safeSubstr(self::$state, 0, 4));
-            $seed = $this->generate(Util::safeStrlen(dechex(PHP_INT_MAX)));
+            list(, self::$counter) = unpack('i', Util::safe_substr(self::$state, 0, 4));
+            $seed = $this->generate(Util::safe_strlen(dechex(PHP_INT_MAX)));
             list(, self::$counter) = unpack('i', $seed);
         }
     }
-
     /**
      * Generate a random string of the specified size
      *
@@ -99,8 +92,8 @@ final class MicroTime extends \RandomLib\AbstractSource
      */
     public function generate($size)
     {
-        $result      = '';
-        $seed        = microtime() . memory_get_usage();
+        $result = '';
+        $seed = microtime() . memory_get_usage();
         self::$state = hash('sha512', self::$state . $seed, true);
         /**
          * Make the generated randomness a bit better by forcing a GC run which
@@ -110,21 +103,17 @@ final class MicroTime extends \RandomLib\AbstractSource
          */
         gc_collect_cycles();
         for ($i = 0; $i < $size; $i += 8) {
-            $seed = self::$state .
-                    microtime() .
-                    pack('Ni', $i, self::counter());
+            $seed = self::$state . microtime() . pack('Ni', $i, self::counter());
             self::$state = hash('sha512', $seed, true);
             /**
              * We only use the first 8 bytes here to prevent exposing the state
              * in its entirety, which could potentially expose other random
              * generations in the future (in the same process)...
              */
-            $result .= Util::safeSubstr(self::$state, 0, 8);
+            $result .= Util::safe_substr(self::$state, 0, 8);
         }
-
-        return Util::safeSubstr($result, 0, $size);
+        return Util::safe_substr($result, 0, $size);
     }
-
     private static function counter()
     {
         if (self::$counter >= PHP_INT_MAX) {
@@ -132,7 +121,6 @@ final class MicroTime extends \RandomLib\AbstractSource
         } else {
             self::$counter++;
         }
-
         return self::$counter;
     }
 }

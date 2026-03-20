@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The Capicom Random Number Source
  *
@@ -28,11 +26,9 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Source;
 
-namespace RandomLib\Source;
-
-use SecurityLib\Strength;
-
+use Security_Lib\Strength;
 /**
  * The Capicom Random Number Source
  *
@@ -45,29 +41,27 @@ use SecurityLib\Strength;
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  * @codeCoverageIgnore
  */
-class CAPICOM extends \RandomLib\AbstractSource
+class CAPICOM extends \Random_Lib\Abstract_Source
 {
     /**
      * Return an instance of Strength indicating the strength of the source
      *
      * @return \SecurityLib\Strength An instance of one of the strength classes
      */
-    public static function getStrength()
+    public static function get_strength()
     {
         return new Strength(Strength::MEDIUM);
     }
-
     /**
      * If the source is currently available.
      * Reasons might be because the library is not installed
      *
      * @return bool
      */
-    public static function isSupported()
+    public static function is_supported()
     {
-        return class_exists('\\COM', false);
+        return class_exists('\COM', false);
     }
-
     /**
      * Generate a random string of the specified size
      *
@@ -79,13 +73,11 @@ class CAPICOM extends \RandomLib\AbstractSource
     {
         try {
             $util = new \COM('CAPICOM.Utilities.1');
-            $data = base64_decode($util->GetRandom($size, 0));
-
+            $data = base64_decode($util->get_random($size, 0));
             return str_pad($data, $size, chr(0));
         } catch (\Exception $e) {
             unset($e);
-
-            return static::emptyValue($size);
+            return static::empty_value($size);
         }
     }
 }

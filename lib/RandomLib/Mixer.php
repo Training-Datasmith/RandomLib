@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The Mixer strategy interface.
  *
@@ -27,8 +25,7 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
-
-namespace RandomLib;
+namespace Random_Lib;
 
 /**
  * The Mixer strategy interface.
@@ -48,15 +45,13 @@ interface Mixer
      *
      * @return \SecurityLib\Strength An instance of one of the strength classes
      */
-    public static function getStrength();
-
+    public static function get_strength();
     /**
      * Test to see if the mixer is available
      *
      * @return bool If the mixer is available on the system
      */
     public static function test();
-
     /**
      * Mix the provided array of strings into a single output of the same size
      *

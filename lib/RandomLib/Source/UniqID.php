@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The UniqID Random Number Source
  *
@@ -29,12 +27,10 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Source;
 
-namespace RandomLib\Source;
-
-use SecurityLib\Strength;
-use SecurityLib\Util;
-
+use Security_Lib\Strength;
+use Security_Lib\Util;
 /**
  * The UniqID Random Number Source
  *
@@ -48,18 +44,17 @@ use SecurityLib\Util;
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  * @codeCoverageIgnore
  */
-class UniqID extends \RandomLib\AbstractSource
+class Uniq_Id extends \Random_Lib\Abstract_Source
 {
     /**
      * Return an instance of Strength indicating the strength of the source
      *
      * @return \SecurityLib\Strength An instance of one of the strength classes
      */
-    public static function getStrength()
+    public static function get_strength()
     {
         return new Strength(Strength::LOW);
     }
-
     /**
      * Generate a random string of the specified size
      *
@@ -70,10 +65,9 @@ class UniqID extends \RandomLib\AbstractSource
     public function generate($size)
     {
         $result = '';
-        while (Util::safeStrlen($result) < $size) {
+        while (Util::safe_strlen($result) < $size) {
             $result = uniqid($result, true);
         }
-
-        return Util::safeSubstr($result, 0, $size);
+        return Util::safe_substr($result, 0, $size);
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The MTRand Random Number Source
  *
@@ -30,11 +28,9 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Source;
 
-namespace RandomLib\Source;
-
-use SecurityLib\Strength;
-
+use Security_Lib\Strength;
 /**
  * The MTRand Random Number Source
  *
@@ -49,14 +45,14 @@ use SecurityLib\Strength;
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  * @codeCoverageIgnore
  */
-class MTRand extends \RandomLib\AbstractSource
+class Mt_Rand extends \Random_Lib\Abstract_Source
 {
     /**
      * Return an instance of Strength indicating the strength of the source
      *
      * @return \SecurityLib\Strength An instance of one of the strength classes
      */
-    public static function getStrength()
+    public static function get_strength()
     {
         // Detect if Suhosin Hardened PHP patch is applied
         if (defined('S_ALL')) {
@@ -64,7 +60,6 @@ class MTRand extends \RandomLib\AbstractSource
         }
         return new Strength(Strength::LOW);
     }
-
     /**
      * Generate a random string of the specified size
      *
@@ -78,7 +73,6 @@ class MTRand extends \RandomLib\AbstractSource
         for ($i = 0; $i < $size; $i++) {
             $result .= chr((mt_rand() ^ mt_rand()) % 256);
         }
-
         return $result;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The Random Number Source interface.
  *
@@ -27,8 +25,7 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
-
-namespace RandomLib;
+namespace Random_Lib;
 
 /**
  * The Random Number Source interface.
@@ -48,16 +45,14 @@ interface Source
      *
      * @return \SecurityLib\Strength An instance of one of the strength classes
      */
-    public static function getStrength();
-
+    public static function get_strength();
     /**
      * If the source is currently available.
      * Reasons might be because the library is not installed
      *
      * @return bool
      */
-    public static function isSupported();
-
+    public static function is_supported();
     /**
      * Generate a random string of the specified size
      *

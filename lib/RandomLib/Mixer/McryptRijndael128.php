@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * mcrypt mixer using the Rijndael cipher with 128 bit block size
  *
@@ -26,12 +24,10 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Mixer;
 
-namespace RandomLib\Mixer;
-
-use RandomLib\AbstractMcryptMixer;
-use SecurityLib\Strength;
-
+use Random_Lib\Abstract_Mcrypt_Mixer;
+use Security_Lib\Strength;
 /**
  * mcrypt mixer using the Rijndael cipher with 128 bit block size
  *
@@ -42,20 +38,19 @@ use SecurityLib\Strength;
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  * @author     Chris Smith <chris@cs278.org>
  */
-class McryptRijndael128 extends AbstractMcryptMixer
+class Mcrypt_Rijndael128 extends Abstract_Mcrypt_Mixer
 {
     /**
      * {@inheritdoc}
      */
-    public static function getStrength()
+    public static function get_strength()
     {
         return new Strength(Strength::HIGH);
     }
-
     /**
      * {@inheritdoc}
      */
-    protected function getCipher()
+    protected function get_cipher()
     {
         return 'rijndael-128';
     }

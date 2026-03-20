@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The URandom Random Number Source
  *
@@ -28,11 +26,9 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Source;
 
-namespace RandomLib\Source;
-
-use SecurityLib\Strength;
-
+use Security_Lib\Strength;
 /**
  * The URandom Random Number Source
  *
@@ -45,34 +41,31 @@ use SecurityLib\Strength;
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  * @codeCoverageIgnore
  */
-class URandom extends \RandomLib\AbstractSource
+class U_Random extends \Random_Lib\Abstract_Source
 {
     /**
      * @var string The file to read from
      */
     protected static $file = '/dev/urandom';
-
     /**
      * Return an instance of Strength indicating the strength of the source
      *
      * @return \SecurityLib\Strength An instance of one of the strength classes
      */
-    public static function getStrength()
+    public static function get_strength()
     {
         return new Strength(Strength::MEDIUM);
     }
-
     /**
      * If the source is currently available.
      * Reasons might be because the library is not installed
      *
      * @return bool
      */
-    public static function isSupported()
+    public static function is_supported()
     {
         return @file_exists(static::$file);
     }
-
     /**
      * Generate a random string of the specified size
      *
@@ -83,18 +76,17 @@ class URandom extends \RandomLib\AbstractSource
     public function generate($size)
     {
         if ($size == 0) {
-            return static::emptyValue($size);
+            return static::empty_value($size);
         }
         $file = fopen(static::$file, 'rb');
         if (!$file) {
-            return static::emptyValue($size);
+            return static::empty_value($size);
         }
         if (function_exists('stream_set_read_buffer')) {
             stream_set_read_buffer($file, 0);
         }
         $result = fread($file, $size);
         fclose($file);
-
         return $result;
     }
 }

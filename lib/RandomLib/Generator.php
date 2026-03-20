@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The Random Number Generator Class
  *
@@ -28,8 +26,7 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
-
-namespace RandomLib;
+namespace Random_Lib;
 
 /**
  * The Random Number Generator Class
@@ -48,94 +45,73 @@ class Generator
      * @const Flag for uppercase letters
      */
     public const CHAR_UPPER = 1;
-
     /**
      * @const Flag for lowercase letters
      */
     public const CHAR_LOWER = 2;
-
     /**
      * @const Flag for alpha characters (combines UPPER + LOWER)
      */
-    public const CHAR_ALPHA = 3; // CHAR_UPPER | CHAR_LOWER
-
+    public const CHAR_ALPHA = 3;
+    // CHAR_UPPER | CHAR_LOWER
     /**
      * @const Flag for digits
      */
     public const CHAR_DIGITS = 4;
-
     /**
      * @const Flag for alpha numeric characters
      */
-    public const CHAR_ALNUM = 7; // CHAR_ALPHA | CHAR_DIGITS
-
+    public const CHAR_ALNUM = 7;
+    // CHAR_ALPHA | CHAR_DIGITS
     /**
      * @const Flag for uppercase hexadecimal symbols
      */
-    public const CHAR_UPPER_HEX = 12; // 8 | CHAR_DIGITS
-
+    public const CHAR_UPPER_HEX = 12;
+    // 8 | CHAR_DIGITS
     /**
      * @const Flag for lowercase hexidecimal symbols
      */
-    public const CHAR_LOWER_HEX = 20; // 16 | CHAR_DIGITS
-
+    public const CHAR_LOWER_HEX = 20;
+    // 16 | CHAR_DIGITS
     /**
      * @const Flag for base64 symbols
      */
-    public const CHAR_BASE64 = 39; // 32 | CHAR_ALNUM
-
+    public const CHAR_BASE64 = 39;
+    // 32 | CHAR_ALNUM
     /**
      * @const Flag for additional symbols accessible via the keyboard
      */
     public const CHAR_SYMBOLS = 64;
-
     /**
      * @const Flag for brackets
      */
     public const CHAR_BRACKETS = 128;
-
     /**
      * @const Flag for punctuation marks
      */
     public const CHAR_PUNCT = 256;
-
     /**
      * @const Flag for upper/lower-case and digits but without "B8G6I1l|0OQDS5Z2"
      */
     public const EASY_TO_READ = 512;
-
     /**
      * @var Mixer The mixing strategy to use for this generator instance
      */
     protected $mixer;
-
     /**
      * @var array An array of random number sources to use for this generator
      */
     protected $sources = [];
-
     /**
      * @var array The different characters, by Flag
      */
-    protected $charArrays = [
-        self::CHAR_UPPER     => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-        self::CHAR_LOWER     => 'abcdefghijklmnopqrstuvwxyz',
-        self::CHAR_DIGITS    => '0123456789',
-        self::CHAR_UPPER_HEX => 'ABCDEF',
-        self::CHAR_LOWER_HEX => 'abcdef',
-        self::CHAR_BASE64    => '+/',
-        self::CHAR_SYMBOLS   => '!"#$%&\'()* +,-./:;<=>?@[\]^_`{|}~',
-        self::CHAR_BRACKETS  => '()[]{}<>',
-        self::CHAR_PUNCT     => ',.;:',
-    ];
-
+    protected $char_arrays = [self::CHAR_UPPER => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', self::CHAR_LOWER => 'abcdefghijklmnopqrstuvwxyz', self::CHAR_DIGITS => '0123456789', self::CHAR_UPPER_HEX => 'ABCDEF', self::CHAR_LOWER_HEX => 'abcdef', self::CHAR_BASE64 => '+/', self::CHAR_SYMBOLS => '!"#$%&\'()* +,-./:;<=>?@[\]^_`{|}~', self::CHAR_BRACKETS => '()[]{}<>', self::CHAR_PUNCT => ',.;:'];
     /**
      * @internal
      * @private
      * @const string Ambiguous characters for "Easy To Read" sets
      */
     public const AMBIGUOUS_CHARS = 'B8G6I1l|0OQDS5Z2()[]{}:;,.';
-
     /**
      * Build a new instance of the generator
      *
@@ -145,11 +121,10 @@ class Generator
     public function __construct(array $sources, Mixer $mixer)
     {
         foreach ($sources as $source) {
-            $this->addSource($source);
+            $this->add_source($source);
         }
         $this->mixer = $mixer;
     }
-
     /**
      * Add a random number source to the generator
      *
@@ -157,13 +132,11 @@ class Generator
      *
      * @return Generator $this The current generator instance
      */
-    public function addSource(Source $source)
+    public function add_source(Source $source)
     {
         $this->sources[] = $source;
-
         return $this;
     }
-
     /**
      * Generate a random number (string) of the requested size
      *
@@ -177,10 +150,8 @@ class Generator
         foreach ($this->sources as $source) {
             $seeds[] = $source->generate($size);
         }
-
         return $this->mixer->mix($seeds);
     }
-
     /**
      * Generate a random integer with the given range
      *
@@ -189,11 +160,11 @@ class Generator
      *
      * @return int The generated random number within the range
      */
-    public function generateInt($min = 0, $max = PHP_INT_MAX)
+    public function generate_int($min = 0, $max = PHP_INT_MAX)
     {
-        $tmp   = max($max, $min);
-        $min   = min($max, $min);
-        $max   = $tmp;
+        $tmp = max($max, $min);
+        $min = min($max, $min);
+        $max = $tmp;
         $range = $max - $min;
         if ($range == 0) {
             return $max;
@@ -205,12 +176,9 @@ class Generator
              * actually store the difference, so we need to check if it's a float
              * and hence auto-converted...
              */
-            throw new \RangeException(
-                'The supplied range is too great to generate'
-            );
+            throw new \RangeException('The supplied range is too great to generate');
         }
-
-        $bits  = $this->countBits($range) + 1;
+        $bits = $this->count_bits($range) + 1;
         $bytes = (int) max(ceil($bits / 8), 1);
         if ($bits == 63) {
             /**
@@ -222,7 +190,6 @@ class Generator
         } else {
             $mask = (int) (pow(2, $bits) - 1);
         }
-
         /**
          * The mask is a better way of dropping unused bits.  Basically what it does
          * is to set all the bits in the mask to 1 that we may need.  Since the max
@@ -240,13 +207,11 @@ class Generator
          * worry about "fixing" negative values.
          */
         do {
-            $test   = $this->generate($bytes);
+            $test = $this->generate($bytes);
             $result = hexdec(bin2hex($test)) & $mask;
         } while ($result > $range);
-
         return $result + $min;
     }
-
     /**
      * Generate a random string of specified length.
      *
@@ -259,32 +224,28 @@ class Generator
      *
      * @return string The generated random string
      */
-    public function generateString($length, $characters = '')
+    public function generate_string($length, $characters = '')
     {
         if (is_int($characters)) {
             // Combine character sets
-            $characters = $this->expandCharacterSets($characters);
+            $characters = $this->expand_character_sets($characters);
         }
         if ($length == 0 || strlen($characters) == 1) {
             return '';
         }
         if (empty($characters)) {
             // Default to base 64
-            $characters = $this->expandCharacterSets(self::CHAR_BASE64);
+            $characters = $this->expand_character_sets(self::CHAR_BASE64);
         }
-
         // determine how many bytes to generate
         // This is basically doing floor(log(strlen($characters)))
         // But it's fixed to work properly for all numbers
-        $len   = strlen($characters);
-
+        $len = strlen($characters);
         // The max call here fixes an issue where we under-generate in cases
         // where less than 8 bits are needed to represent $len
-        $bytes = $length * ceil(($this->countBits($len)) / 8);
-
+        $bytes = $length * ceil($this->count_bits($len) / 8);
         // determine mask for valid characters
-        $mask   = 256 - (256 % $len);
-
+        $mask = 256 - 256 % $len;
         $result = '';
         do {
             $rand = $this->generate($bytes);
@@ -298,27 +259,24 @@ class Generator
         // We may over-generate, since we always use the entire buffer
         return substr($result, 0, $length);
     }
-
     /**
      * Get the Mixer used for this instance
      *
      * @return Mixer the current mixer
      */
-    public function getMixer()
+    public function get_mixer()
     {
         return $this->mixer;
     }
-
     /**
      * Get the Sources used for this instance
      *
      * @return Source[] the current mixer
      */
-    public function getSources()
+    public function get_sources()
     {
         return $this->sources;
     }
-
     /**
      * Count the minimum number of bits to represent the provided number
      *
@@ -329,16 +287,14 @@ class Generator
      *
      * @return int The number of bits
      */
-    protected function countBits($number)
+    protected function count_bits($number)
     {
         $log2 = 0;
         while ($number >>= 1) {
             $log2++;
         }
-
         return $log2;
     }
-
     /**
      * Expand a character set bitwise spec into a string character set
      *
@@ -348,13 +304,13 @@ class Generator
      *
      * @return string The expanded string
      */
-    protected function expandCharacterSets($spec)
+    protected function expand_character_sets($spec)
     {
         $combined = '';
         if ($spec == self::EASY_TO_READ) {
             $spec |= self::CHAR_ALNUM;
         }
-        foreach ($this->charArrays as $flag => $chars) {
+        foreach ($this->char_arrays as $flag => $chars) {
             if ($flag == self::EASY_TO_READ) {
                 // handle this later
                 continue;
@@ -367,7 +323,6 @@ class Generator
             // remove ambiguous characters
             $combined = str_replace(str_split(self::AMBIGUOUS_CHARS), '', $combined);
         }
-
         return count_chars($combined, 3);
     }
 }

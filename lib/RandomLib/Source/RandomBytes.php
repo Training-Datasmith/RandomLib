@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The PHP7 Random Number Source
  *
@@ -28,11 +26,9 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Source;
 
-namespace RandomLib\Source;
-
-use SecurityLib\Strength;
-
+use Security_Lib\Strength;
 /**
  * The PHP7 Random Number Source
  *
@@ -44,7 +40,7 @@ use SecurityLib\Strength;
  *
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  */
-class RandomBytes extends \RandomLib\AbstractSource
+class Random_Bytes extends \Random_Lib\Abstract_Source
 {
     /**
      * If the source is currently available.
@@ -52,21 +48,19 @@ class RandomBytes extends \RandomLib\AbstractSource
      *
      * @return bool
      */
-    public static function isSupported()
+    public static function is_supported()
     {
         return function_exists('random_bytes');
     }
-
     /**
      * Return an instance of Strength indicating the strength of the source
      *
      * @return Strength An instance of one of the strength classes
      */
-    public static function getStrength()
+    public static function get_strength()
     {
         return new Strength(Strength::HIGH);
     }
-
     /**
      * Generate a random string of the specified size
      *
@@ -76,10 +70,9 @@ class RandomBytes extends \RandomLib\AbstractSource
      */
     public function generate($size)
     {
-        if (!self::isSupported()) {
+        if (!self::is_supported()) {
             return str_repeat(chr(0), $size);
         }
-
         return \random_bytes($size);
     }
 }

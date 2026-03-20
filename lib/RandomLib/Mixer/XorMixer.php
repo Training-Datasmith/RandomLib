@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /*
  * The RandomLib library for securely generating random numbers and strings in PHP
  *
@@ -10,7 +9,6 @@ declare(strict_types=1);
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    Build @@version@@
  */
-
 /**
  * The Hash medium strength mixer class
  *
@@ -31,11 +29,9 @@ declare(strict_types=1);
  *
  * @version    Build @@version@@
  */
+namespace Random_Lib\Mixer;
 
-namespace RandomLib\Mixer;
-
-use SecurityLib\Strength;
-
+use Security_Lib\Strength;
 /**
  * The Hash medium strength mixer class
  *
@@ -50,18 +46,17 @@ use SecurityLib\Strength;
  *
  * @author     Anthony Ferrara <ircmaxell@ircmaxell.com>
  */
-class XorMixer extends \RandomLib\AbstractMixer
+class Xor_Mixer extends \Random_Lib\Abstract_Mixer
 {
     /**
      * Return an instance of Strength indicating the strength of the source
      *
      * @return \SecurityLib\Strength An instance of one of the strength classes
      */
-    public static function getStrength()
+    public static function get_strength()
     {
         return new Strength(Strength::VERYLOW);
     }
-
     /**
      * Test to see if the mixer is available
      *
@@ -71,17 +66,15 @@ class XorMixer extends \RandomLib\AbstractMixer
     {
         return true;
     }
-
     /**
      * Get the block size (the size of the individual blocks used for the mixing)
      *
      * @return int The block size
      */
-    protected function getPartSize()
+    protected function get_part_size()
     {
         return 64;
     }
-
     /**
      * Mix 2 parts together using one method
      *
@@ -90,11 +83,10 @@ class XorMixer extends \RandomLib\AbstractMixer
      *
      * @return string The mixed data
      */
-    protected function mixParts1($part1, $part2)
+    protected function mix_parts1($part1, $part2)
     {
         return $part1 ^ $part2;
     }
-
     /**
      * Mix 2 parts together using another different method
      *
@@ -103,7 +95,7 @@ class XorMixer extends \RandomLib\AbstractMixer
      *
      * @return string The mixed data
      */
-    protected function mixParts2($part1, $part2)
+    protected function mix_parts2($part1, $part2)
     {
         // Both mixers are identical, this is for speed, not security
         return $part1 ^ $part2;
