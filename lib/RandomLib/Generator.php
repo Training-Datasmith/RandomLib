@@ -132,19 +132,34 @@ class Generator
      *
      * @return Generator $this The current generator instance
      */
-    public function add_source(Source $source)
+    /**
+     * Adds a random number source to the generator.
+     *
+     * Sources are XOR-mixed together; adding more high-quality sources
+     * increases the overall entropy of the generated values.
+     *
+     * @param Source $source The entropy source to add
+     *
+     * @return static $this Fluent interface for chaining
+     */
+    public function add_source(Source $source): static
     {
         $this->sources[] = $source;
         return $this;
     }
     /**
-     * Generate a random number (string) of the requested size
+     * Generates a raw random byte string of the requested length.
      *
-     * @param int $size The size of the requested random number
+     * All registered sources are asked for the same number of bytes and the
+     * results are XOR-mixed by the configured Mixer to produce the final output.
      *
-     * @return string The generated random number (string)
+     * @param int $size Number of bytes to generate (must be > 0)
+     *
+     * @return string A binary string of exactly $size bytes
+     *
+     * @complexity O(n * sources) where n is $size and sources is the number of entropy sources
      */
-    public function generate($size)
+    public function generate(int $size): string
     {
         $seeds = [];
         foreach ($this->sources as $source) {
@@ -153,14 +168,19 @@ class Generator
         return $this->mixer->mix($seeds);
     }
     /**
-     * Generate a random integer with the given range
+     * Generates a cryptographically random integer within the given range.
      *
-     * @param int $min The lower bound of the range to generate
-     * @param int $max The upper bound of the range to generate
+     * Uses rejection sampling to avoid modulo bias: values outside the usable
+     * range are discarded and new bytes are generated until a valid value is found.
      *
-     * @return int The generated random number within the range
+     * @param int $min Lower bound of the range (inclusive), defaults to 0
+     * @param int $max Upper bound of the range (inclusive), defaults to PHP_INT_MAX
+     *
+     * @return int Uniformly distributed random integer in [$min, $max]
+     *
+     * @throws \RangeException If the range between $min and $max exceeds PHP_INT_MAX
      */
-    public function generate_int($min = 0, $max = PHP_INT_MAX)
+    public function generate_int(int $min = 0, int $max = PHP_INT_MAX): int
     {
         $tmp = max($max, $min);
         $min = min($max, $min);

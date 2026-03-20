@@ -65,7 +65,7 @@ class Factory extends \Security_Lib\Abstract_Factory
      *
      * @return Generator The instantiated generator
      */
-    public function get_generator(\Security_Lib\Strength $strength)
+    public function get_generator(\Security_Lib\Strength $strength): Generator
     {
         $sources = $this->find_sources($strength);
         $mixer = $this->find_mixer($strength);
@@ -80,78 +80,84 @@ class Factory extends \Security_Lib\Abstract_Factory
      *
      * @return Generator The instantiated generator
      */
-    public function get_high_strength_generator()
+    public function get_high_strength_generator(): Generator
     {
         return $this->get_generator(new Strength(Strength::HIGH));
     }
+
     /**
-     * Get a low strength random number generator
+     * Get a low strength random number generator.
      *
      * Low Strength should be used anywhere that random strings are needed in a
      * non-cryptographical setting.  They are not strong enough to be used as
      * keys or salts.  They are however useful for one-time use tokens.
      *
-     * @return Generator The instantiated generator
+     * @return Generator A low-strength generator suitable for non-cryptographic tokens
      */
-    public function get_low_strength_generator()
+    public function get_low_strength_generator(): Generator
     {
         return $this->get_generator(new Strength(Strength::LOW));
     }
+
     /**
-     * Get a medium strength random number generator
+     * Get a medium strength random number generator.
      *
      * Medium Strength should be used for most needs of a cryptographic nature.
      * They are strong enough to be used as keys and salts.  However, they do
-     * take some time and resources to generate, so they should not be over-used
+     * take some time and resources to generate, so they should not be over-used.
      *
-     * @return Generator The instantiated generator
+     * @return Generator A medium-strength generator suitable for session tokens and salts
      */
-    public function get_medium_strength_generator()
+    public function get_medium_strength_generator(): Generator
     {
         return $this->get_generator(new Strength(Strength::MEDIUM));
     }
+
     /**
-     * Get all loaded mixing strategies
+     * Get all loaded mixing strategies.
      *
-     * @return array An array of mixers
+     * @return array<string, Mixer> Registered mixer instances keyed by name
      */
-    public function get_mixers()
+    public function get_mixers(): array
     {
         return $this->mixers;
     }
+
     /**
-     * Get all loaded random number sources
+     * Get all loaded random number sources.
      *
-     * @return array An array of sources
+     * @return array<string, Source> Registered source instances keyed by name
      */
-    public function get_sources()
+    public function get_sources(): array
     {
         return $this->sources;
     }
+
     /**
-     * Register a mixing strategy for this factory instance
+     * Registers a mixing strategy for this factory instance.
      *
-     * @param string $name  The name of the stategy
-     * @param string $class The class name of the implementation
+     * @param string $name  Short name for the mixer (used for lookup)
+     * @param string $class Fully-qualified class name implementing Mixer
      *
-     * @return Factory $this The current factory instance
+     * @return static Fluent interface
      */
-    public function register_mixer($name, $class)
+    public function register_mixer(string $name, string $class): static
     {
         $this->register_type('mixers', __NAMESPACE__ . '\Mixer', $name, $class);
         return $this;
     }
+
     /**
-     * Register a random number source for this factory instance
+     * Registers a random number source for this factory instance.
      *
-     * Note that this class must implement the Source interface
+     * The class must implement the Source interface.
      *
-     * @param string $name  The name of the stategy
-     * @param string $class The class name of the implementation
+     * @param string $name  Short name for the source (used for lookup)
+     * @param string $class Fully-qualified class name implementing Source
      *
-     * @return Factory $this The current factory instance
+     * @return static Fluent interface
      */
-    public function register_source($name, $class)
+    public function register_source(string $name, string $class): static
     {
         $this->register_type('sources', __NAMESPACE__ . '\Source', $name, $class);
         return $this;
