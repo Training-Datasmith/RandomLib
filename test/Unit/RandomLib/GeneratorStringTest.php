@@ -44,10 +44,9 @@ class GeneratorStringTest extends TestCase
 
     public function setUp(): void
     {
-        $source1 = $this->getMock('RandomLib\Source');
-        $source1->expects($this->any())
-            ->method('generate')
-            ->will($this->returnCallback(
+        $source1 = $this->createMock(Source::class);
+        $source1->method('generate')
+            ->willReturnCallback(
                 function ($size) {
                     $r = '';
                     for ($i = 0; $i < $size; $i++) {
@@ -56,11 +55,10 @@ class GeneratorStringTest extends TestCase
 
                     return $r;
                 }
-            ));
-        $source2 = $this->getMock('RandomLib\Source');
-        $source2->expects($this->any())
-            ->method('generate')
-            ->will($this->returnCallback(
+            );
+        $source2 = $this->createMock(Source::class);
+        $source2->method('generate')
+            ->willReturnCallback(
                 function ($size) {
                     $r = '';
                     for ($i = 0; $i < $size; $i++) {
@@ -69,12 +67,11 @@ class GeneratorStringTest extends TestCase
 
                     return $r;
                 }
-            ));
+            );
 
-        $this->mixer = $this->getMock('RandomLib\Mixer');
-        $this->mixer->expects($this->any())
-            ->method('mix')
-            ->will($this->returnCallback(function (array $sources) {
+        $this->mixer = $this->createMock(Mixer::class);
+        $this->mixer->method('mix')
+            ->willReturnCallback(function (array $sources) {
                 if (empty($sources)) {
                     return '';
                 }
@@ -87,7 +84,7 @@ class GeneratorStringTest extends TestCase
                     },
                     $start
                 );
-            }));
+            });
 
         $this->sources = [$source1, $source2];
         $this->generator = new Generator($this->sources, $this->mixer);

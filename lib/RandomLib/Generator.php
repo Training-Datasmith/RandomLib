@@ -280,7 +280,7 @@ class Generator
 
         // The max call here fixes an issue where we under-generate in cases
         // where less than 8 bits are needed to represent $len
-        $bytes = $length * ceil(($this->countBits($len)) / 8);
+        $bytes = (int) ($length * ceil(($this->countBits($len)) / 8));
 
         // determine mask for valid characters
         $mask   = 256 - (256 % $len);

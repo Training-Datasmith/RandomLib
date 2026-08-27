@@ -81,7 +81,7 @@ final class MicroTime extends \RandomLib\AbstractSource
         $state      .= getmypid() . memory_get_usage();
         $state      .= serialize($_ENV);
         $state      .= serialize($_SERVER);
-        $state      .= count(debug_backtrace(false));
+        $state      .= count(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
         self::$state = hash('sha512', $state, true);
         if (is_null(self::$counter)) {
             list(, self::$counter) = unpack('i', Util::safeSubstr(self::$state, 0, 4));
