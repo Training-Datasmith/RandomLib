@@ -13,9 +13,10 @@ declare(strict_types=1);
 
 namespace RandomLib\Mixer;
 
+use PHPUnit\Framework\TestCase;
 use SecurityLib\Strength;
 
-class HashTest extends \PHPUnit_Framework_TestCase
+class HashTest extends TestCase
 {
     public static function provideMix()
     {

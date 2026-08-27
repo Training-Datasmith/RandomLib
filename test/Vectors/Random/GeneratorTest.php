@@ -11,11 +11,12 @@ declare(strict_types=1);
  * @version    Build @@version@@
  */
 
+use PHPUnit\Framework\TestCase;
 use RandomLib\Generator;
 use RandomLibTest\Mocks\Random\Mixer;
 use RandomLibTest\Mocks\Random\Source;
 
-class Vectors_Random_GeneratorTest extends PHPUnit_Framework_TestCase
+class Vectors_Random_GeneratorTest extends TestCase
 {
     public static function provideGenerateInt()
     {

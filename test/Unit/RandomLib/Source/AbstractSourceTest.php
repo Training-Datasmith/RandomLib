@@ -13,11 +13,12 @@ declare(strict_types=1);
 
 namespace RandomLib\Source;
 
+use PHPUnit\Framework\TestCase;
 use SecurityLib\Strength;
 
-abstract class AbstractSourceTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractSourceTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $class = static::getTestedClass();
 

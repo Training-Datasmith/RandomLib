@@ -13,7 +13,9 @@ declare(strict_types=1);
 
 namespace RandomLib;
 
-class GeneratorStringTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class GeneratorStringTest extends TestCase
 {
     protected $generator = null;
     protected $mixer = null;
@@ -40,7 +42,7 @@ class GeneratorStringTest extends \PHPUnit_Framework_TestCase
         ];
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $source1 = $this->getMock('RandomLib\Source');
         $source1->expects($this->any())

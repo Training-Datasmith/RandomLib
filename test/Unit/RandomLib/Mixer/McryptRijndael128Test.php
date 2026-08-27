@@ -13,9 +13,10 @@ declare(strict_types=1);
 
 namespace RandomLib\Mixer;
 
+use PHPUnit\Framework\TestCase;
 use SecurityLib\Strength;
 
-class McryptRijndael128Test extends \PHPUnit_Framework_TestCase
+class McryptRijndael128Test extends TestCase
 {
     public static function provideMix()
     {
@@ -34,7 +35,7 @@ class McryptRijndael128Test extends \PHPUnit_Framework_TestCase
         return $data;
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!extension_loaded('mcrypt')) {
             $this->markTestSkipped('mcrypt extension is not available');

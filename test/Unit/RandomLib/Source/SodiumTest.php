@@ -13,9 +13,10 @@ declare(strict_types=1);
 
 namespace RandomLib\Source;
 
+use PHPUnit\Framework\TestCase;
 use SecurityLib\Strength;
 
-class SodiumTest extends \PHPUnit_Framework_TestCase
+class SodiumTest extends TestCase
 {
     public static function provideGenerate()
     {

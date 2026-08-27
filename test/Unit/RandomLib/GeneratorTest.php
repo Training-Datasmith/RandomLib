@@ -13,7 +13,9 @@ declare(strict_types=1);
 
 namespace RandomLib;
 
-class GeneratorTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class GeneratorTest extends TestCase
 {
     protected $generator = null;
     protected $mixer = null;
@@ -70,7 +72,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         ];
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $source1 = $this->getMock('RandomLib\Source');
         $source1->expects($this->any())
@@ -162,11 +164,9 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($max >= $n);
     }
 
-    /**
-     * @expectedException RangeException
-     */
     public function testGenerateIntFail()
     {
+        $this->expectException(\RangeException::class);
         $n = $this->generator->generateInt(-1, PHP_INT_MAX);
     }
 

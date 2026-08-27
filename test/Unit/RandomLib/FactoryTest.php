@@ -13,9 +13,10 @@ declare(strict_types=1);
 
 namespace RandomLib;
 
+use PHPUnit\Framework\TestCase;
 use SecurityLib\Strength;
 
-class FactoryTest extends \PHPUnit_Framework_TestCase
+class FactoryTest extends TestCase
 {
     public function testConstruct()
     {
@@ -56,12 +57,10 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    /**
-     * @expectedException RuntimeException
-     * @expectedExceptionMessage Could not find sources
-     */
     public function testNoAvailableSource()
     {
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('Could not find sources');
         $factory = new Factory();
         $sources = new \ReflectionProperty($factory, 'sources');
         $sources->setAccessible(true);
