@@ -67,7 +67,7 @@ class Sodium extends \RandomLib\AbstractSource
      */
     public function __construct($useLibsodium = true)
     {
-        if ($useLibsodium && extension_loaded('libsodium')) {
+        if ($useLibsodium && self::isSupported()) {
             $this->hasLibsodium = true;
         }
     }
@@ -80,7 +80,9 @@ class Sodium extends \RandomLib\AbstractSource
      */
     public static function isSupported()
     {
-        return function_exists('Sodium\\randombytes_buf');
+        return extension_loaded('sodium')
+            || extension_loaded('libsodium')
+            || function_exists('Sodium\\randombytes_buf');
     }
 
     /**
@@ -106,6 +108,10 @@ class Sodium extends \RandomLib\AbstractSource
             return str_repeat(chr(0), $size);
         }
 
-        return \Sodium\randombytes_buf($size);
+        if (function_exists('Sodium\\randombytes_buf')) {
+            return \Sodium\randombytes_buf($size);
+        }
+
+        return random_bytes($size);
     }
 }

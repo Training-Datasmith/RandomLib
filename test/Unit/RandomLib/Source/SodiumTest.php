@@ -41,8 +41,8 @@ class SodiumTest extends TestCase
      */
     public function testGenerate($length, $not)
     {
-        if (!extension_loaded('libsodium')) {
-            $this->markTestSkipped('The libsodium extension is not loaded');
+        if (!Sodium::isSupported()) {
+            $this->markTestSkipped('The sodium extension is not loaded');
         }
 
         $rand = new Sodium();
@@ -64,8 +64,8 @@ class SodiumTest extends TestCase
 
     public function testGenerateWithZeroLength()
     {
-        if (!extension_loaded('libsodium')) {
-            $this->markTestSkipped('The libsodium extension is not loaded');
+        if (!Sodium::isSupported()) {
+            $this->markTestSkipped('The sodium extension is not loaded');
         }
 
         $rand = new Sodium();
