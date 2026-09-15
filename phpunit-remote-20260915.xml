@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="246" assertions="378" errors="0" warnings="0" failures="0" skipped="21" time="0.011004">
+    <testsuite name="Unit" tests="246" assertions="378" errors="0" warnings="0" failures="0" skipped="21" time="0.011004">
+      <testsuite name="RandomLib\FactoryTest" file="/workspace/test/Unit/RandomLib/FactoryTest.php" tests="4" assertions="11" errors="0" warnings="0" failures="0" skipped="0" time="0.002656">
+        <testcase name="testConstruct" class="RandomLib\FactoryTest" classname="RandomLib.FactoryTest" file="/workspace/test/Unit/RandomLib/FactoryTest.php" line="21" assertions="1" time="0.001868"/>
+        <testcase name="testGetGeneratorFallback" class="RandomLib\FactoryTest" classname="RandomLib.FactoryTest" file="/workspace/test/Unit/RandomLib/FactoryTest.php" line="27" assertions="1" time="0.000443"/>
+        <testcase name="testGetMediumStrengthGenerator" class="RandomLib\FactoryTest" classname="RandomLib.FactoryTest" file="/workspace/test/Unit/RandomLib/FactoryTest.php" line="44" assertions="7" time="0.000124"/>
+        <testcase name="testNoAvailableSource" class="RandomLib\FactoryTest" classname="RandomLib.FactoryTest" file="/workspace/test/Unit/RandomLib/FactoryTest.php" line="60" assertions="2" time="0.000221"/>
+      </testsuite>
+      <testsuite name="RandomLib\GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" tests="15" assertions="15" errors="0" warnings="0" failures="0" skipped="0" time="0.003542">
+        <testsuite name="RandomLib\GeneratorStringTest::testScheme" tests="15" assertions="15" errors="0" warnings="0" failures="0" skipped="0" time="0.003542">
+          <testcase name="testScheme with data set #0" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.003037"/>
+          <testcase name="testScheme with data set #1" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000057"/>
+          <testcase name="testScheme with data set #2" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000038"/>
+          <testcase name="testScheme with data set #3" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000033"/>
+          <testcase name="testScheme with data set #4" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000032"/>
+          <testcase name="testScheme with data set #5" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000039"/>
+          <testcase name="testScheme with data set #6" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000040"/>
+          <testcase name="testScheme with data set #7" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000030"/>
+          <testcase name="testScheme with data set #8" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000033"/>
+          <testcase name="testScheme with data set #9" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000028"/>
+          <testcase name="testScheme with data set #10" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000038"/>
+          <testcase name="testScheme with data set #11" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000036"/>
+          <testcase name="testScheme with data set #12" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000037"/>
+          <testcase name="testScheme with data set #13" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000035"/>
+          <testcase name="testScheme with data set #14" class="RandomLib\GeneratorStringTest" classname="RandomLib.GeneratorStringTest" file="/workspace/test/Unit/RandomLib/GeneratorStringTest.php" line="96" assertions="1" time="0.000029"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" tests="33" assertions="37" errors="0" warnings="0" failures="0" skipped="0" time="0.001016">
+        <testcase name="testConstruct" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="123" assertions="1" time="0.000033"/>
+        <testcase name="testGetMixer" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="128" assertions="1" time="0.000119"/>
+        <testcase name="testGetSources" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="133" assertions="1" time="0.000027"/>
+        <testsuite name="RandomLib\GeneratorTest::testGenerate" tests="5" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.000137">
+          <testcase name="testGenerate with data set #0" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="141" assertions="1" time="0.000034"/>
+          <testcase name="testGenerate with data set #1" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="141" assertions="1" time="0.000026"/>
+          <testcase name="testGenerate with data set #2" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="141" assertions="1" time="0.000026"/>
+          <testcase name="testGenerate with data set #3" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="141" assertions="1" time="0.000026"/>
+          <testcase name="testGenerate with data set #4" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="141" assertions="1" time="0.000026"/>
+        </testsuite>
+        <testsuite name="RandomLib\GeneratorTest::testGenerateInt" tests="10" assertions="10" errors="0" warnings="0" failures="0" skipped="0" time="0.000270">
+          <testcase name="testGenerateInt with data set #0" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000028"/>
+          <testcase name="testGenerateInt with data set #1" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000030"/>
+          <testcase name="testGenerateInt with data set #2" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000027"/>
+          <testcase name="testGenerateInt with data set #3" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000029"/>
+          <testcase name="testGenerateInt with data set #4" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000027"/>
+          <testcase name="testGenerateInt with data set #5" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000027"/>
+          <testcase name="testGenerateInt with data set #6" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000026"/>
+          <testcase name="testGenerateInt with data set #7" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000026"/>
+          <testcase name="testGenerateInt with data set #8" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000026"/>
+          <testcase name="testGenerateInt with data set #9" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="149" assertions="1" time="0.000027"/>
+        </testsuite>
+        <testsuite name="RandomLib\GeneratorTest::testGenerateIntRange" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.000108">
+          <testcase name="testGenerateIntRange with data set #0" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="157" assertions="2" time="0.000028"/>
+          <testcase name="testGenerateIntRange with data set #1" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="157" assertions="2" time="0.000027"/>
+          <testcase name="testGenerateIntRange with data set #2" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="157" assertions="2" time="0.000026"/>
+          <testcase name="testGenerateIntRange with data set #3" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="157" assertions="2" time="0.000027"/>
+        </testsuite>
+        <testcase name="testGenerateIntFail" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="164" assertions="1" time="0.000040"/>
+        <testcase name="testGenerateIntLargeTest" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="170" assertions="1" time="0.000031"/>
+        <testsuite name="RandomLib\GeneratorTest::testGenerateString" tests="8" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.000215">
+          <testcase name="testGenerateString with data set #0" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000026"/>
+          <testcase name="testGenerateString with data set #1" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000026"/>
+          <testcase name="testGenerateString with data set #2" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000021"/>
+          <testcase name="testGenerateString with data set #3" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000026"/>
+          <testcase name="testGenerateString with data set #4" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000027"/>
+          <testcase name="testGenerateString with data set #5" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000027"/>
+          <testcase name="testGenerateString with data set #6" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000030"/>
+          <testcase name="testGenerateString with data set #7" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="185" assertions="1" time="0.000032"/>
+        </testsuite>
+        <testcase name="testGenerateLargeRange" class="RandomLib\GeneratorTest" classname="RandomLib.GeneratorTest" file="/workspace/test/Unit/RandomLib/GeneratorTest.php" line="196" assertions="1" time="0.000034"/>
+      </testsuite>
+      <testsuite name="RandomLib\Mixer\HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" tests="12" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.000176">
+        <testcase name="testConstructWithoutArgument" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="39" assertions="1" time="0.000011"/>
+        <testcase name="testGetStrength" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="45" assertions="1" time="0.000058"/>
+        <testcase name="testTest" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="52" assertions="1" time="0.000008"/>
+        <testsuite name="RandomLib\Mixer\HashTest::testMix" tests="9" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.000099">
+          <testcase name="testMix with data set #0" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000011"/>
+          <testcase name="testMix with data set #1" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000019"/>
+          <testcase name="testMix with data set #2" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000009"/>
+          <testcase name="testMix with data set #3" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000010"/>
+          <testcase name="testMix with data set #4" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000010"/>
+          <testcase name="testMix with data set #5" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000009"/>
+          <testcase name="testMix with data set #6" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000009"/>
+          <testcase name="testMix with data set #7" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000011"/>
+          <testcase name="testMix with data set #8" class="RandomLib\Mixer\HashTest" classname="RandomLib.Mixer.HashTest" file="/workspace/test/Unit/RandomLib/Mixer/HashTest.php" line="61" assertions="1" time="0.000011"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\Mixer\McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" tests="12" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.000358">
+        <testcase name="testConstructWithoutArgument" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="45" assertions="1" time="0.000024"/>
+        <testcase name="testGetStrength" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="51" assertions="1" time="0.000027"/>
+        <testcase name="testTest" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="58" assertions="1" time="0.000008"/>
+        <testsuite name="RandomLib\Mixer\McryptRijndael128Test::testMix" tests="9" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.000298">
+          <testcase name="testMix with data set #0" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000017"/>
+          <testcase name="testMix with data set #1" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000016"/>
+          <testcase name="testMix with data set #2" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000015"/>
+          <testcase name="testMix with data set #3" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000069"/>
+          <testcase name="testMix with data set #4" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000034"/>
+          <testcase name="testMix with data set #5" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000030"/>
+          <testcase name="testMix with data set #6" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000028"/>
+          <testcase name="testMix with data set #7" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000045"/>
+          <testcase name="testMix with data set #8" class="RandomLib\Mixer\McryptRijndael128Test" classname="RandomLib.Mixer.McryptRijndael128Test" file="/workspace/test/Unit/RandomLib/Mixer/McryptRijndael128Test.php" line="67" assertions="1" time="0.000043"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\Source\CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" tests="21" assertions="0" errors="0" warnings="0" failures="0" skipped="21" time="0.000327">
+        <testcase name="testGetStrength" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="51" assertions="0" time="0.000126">
+          <skipped/>
+        </testcase>
+        <testsuite name="RandomLib\Source\CAPICOMTest::testGenerate" tests="20" assertions="0" errors="0" warnings="0" failures="0" skipped="20" time="0.000200">
+          <testcase name="testGenerate with data set #0" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000016">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #1" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000011">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #2" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000007">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #3" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000017">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #4" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000006">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #5" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000014">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #6" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000008">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #7" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000007">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #8" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000008">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #9" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000006">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #10" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000013">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #11" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000008">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #12" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000014">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #13" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000007">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #14" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000013">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #15" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000006">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #16" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000007">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #17" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000012">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #18" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000007">
+            <skipped/>
+          </testcase>
+          <testcase name="testGenerate with data set #19" class="RandomLib\Source\CAPICOMTest" classname="RandomLib.Source.CAPICOMTest" file="/workspace/test/Unit/RandomLib/Source/CAPICOMTest.php" line="63" assertions="0" time="0.000014">
+            <skipped/>
+          </testcase>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\Source\MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" tests="21" assertions="41" errors="0" warnings="0" failures="0" skipped="0" time="0.000558">
+        <testcase name="testGetStrength" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="51" assertions="1" time="0.000035"/>
+        <testsuite name="RandomLib\Source\MTRandTest::testGenerate" tests="20" assertions="40" errors="0" warnings="0" failures="0" skipped="0" time="0.000523">
+          <testcase name="testGenerate with data set #0" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000280"/>
+          <testcase name="testGenerate with data set #1" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000018"/>
+          <testcase name="testGenerate with data set #2" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #3" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #4" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #5" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #6" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #7" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #8" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #9" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #10" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #11" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #12" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #13" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #14" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000019"/>
+          <testcase name="testGenerate with data set #15" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #16" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #17" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #18" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #19" class="RandomLib\Source\MTRandTest" classname="RandomLib.Source.MTRandTest" file="/workspace/test/Unit/RandomLib/Source/MTRandTest.php" line="63" assertions="2" time="0.000013"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\Source\MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" tests="22" assertions="42" errors="0" warnings="0" failures="0" skipped="0" time="0.001109">
+        <testcase name="testCounterNotNull" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="28" assertions="1" time="0.000037"/>
+        <testcase name="testGetStrength" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="51" assertions="1" time="0.000026"/>
+        <testsuite name="RandomLib\Source\MicroTimeTest::testGenerate" tests="20" assertions="40" errors="0" warnings="0" failures="0" skipped="0" time="0.001046">
+          <testcase name="testGenerate with data set #0" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000165"/>
+          <testcase name="testGenerate with data set #1" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000063"/>
+          <testcase name="testGenerate with data set #2" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000048"/>
+          <testcase name="testGenerate with data set #3" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000043"/>
+          <testcase name="testGenerate with data set #4" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000042"/>
+          <testcase name="testGenerate with data set #5" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000042"/>
+          <testcase name="testGenerate with data set #6" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000042"/>
+          <testcase name="testGenerate with data set #7" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000043"/>
+          <testcase name="testGenerate with data set #8" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000042"/>
+          <testcase name="testGenerate with data set #9" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000044"/>
+          <testcase name="testGenerate with data set #10" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000045"/>
+          <testcase name="testGenerate with data set #11" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000044"/>
+          <testcase name="testGenerate with data set #12" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000059"/>
+          <testcase name="testGenerate with data set #13" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000046"/>
+          <testcase name="testGenerate with data set #14" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000045"/>
+          <testcase name="testGenerate with data set #15" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000046"/>
+          <testcase name="testGenerate with data set #16" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000046"/>
+          <testcase name="testGenerate with data set #17" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000047"/>
+          <testcase name="testGenerate with data set #18" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000047"/>
+          <testcase name="testGenerate with data set #19" class="RandomLib\Source\MicroTimeTest" classname="RandomLib.Source.MicroTimeTest" file="/workspace/test/Unit/RandomLib/Source/MicroTimeTest.php" line="63" assertions="2" time="0.000046"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\Source\RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" tests="21" assertions="41" errors="0" warnings="0" failures="0" skipped="0" time="0.000289">
+        <testcase name="testGetStrength" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="51" assertions="1" time="0.000033"/>
+        <testsuite name="RandomLib\Source\RandTest::testGenerate" tests="20" assertions="40" errors="0" warnings="0" failures="0" skipped="0" time="0.000256">
+          <testcase name="testGenerate with data set #0" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000019"/>
+          <testcase name="testGenerate with data set #1" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #2" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #3" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #4" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #5" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #6" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #7" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #8" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #9" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #10" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #11" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #12" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #13" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #14" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #15" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #16" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000020"/>
+          <testcase name="testGenerate with data set #17" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #18" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #19" class="RandomLib\Source\RandTest" classname="RandomLib.Source.RandTest" file="/workspace/test/Unit/RandomLib/Source/RandTest.php" line="63" assertions="2" time="0.000014"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\Source\SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" tests="43" assertions="85" errors="0" warnings="0" failures="0" skipped="0" time="0.000354">
+        <testcase name="testGetStrength" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="32" assertions="1" time="0.000026"/>
+        <testsuite name="RandomLib\Source\SodiumTest::testGenerate" tests="20" assertions="40" errors="0" warnings="0" failures="0" skipped="0" time="0.000207">
+          <testcase name="testGenerate with data set #0" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000021"/>
+          <testcase name="testGenerate with data set #1" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #2" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #3" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #4" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #5" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #6" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+          <testcase name="testGenerate with data set #7" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+          <testcase name="testGenerate with data set #8" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #9" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+          <testcase name="testGenerate with data set #10" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+          <testcase name="testGenerate with data set #11" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #12" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #13" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #14" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+          <testcase name="testGenerate with data set #15" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #16" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+          <testcase name="testGenerate with data set #17" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000010"/>
+          <testcase name="testGenerate with data set #18" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+          <testcase name="testGenerate with data set #19" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="42" assertions="2" time="0.000009"/>
+        </testsuite>
+        <testsuite name="RandomLib\Source\SodiumTest::testGenerateWithoutLibsodium" tests="20" assertions="40" errors="0" warnings="0" failures="0" skipped="0" time="0.000106">
+          <testcase name="testGenerateWithoutLibsodium with data set #0" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000011"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #1" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000006"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #2" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #3" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #4" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #5" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #6" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #7" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #8" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #9" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #10" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #11" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #12" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #13" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #14" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000004"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #15" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #16" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #17" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #18" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000005"/>
+          <testcase name="testGenerateWithoutLibsodium with data set #19" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="57" assertions="2" time="0.000004"/>
+        </testsuite>
+        <testcase name="testGenerateWithZeroLength" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="65" assertions="2" time="0.000009"/>
+        <testcase name="testGenerateWithZeroLengthWithoutLibsodium" class="RandomLib\Source\SodiumTest" classname="RandomLib.Source.SodiumTest" file="/workspace/test/Unit/RandomLib/Source/SodiumTest.php" line="77" assertions="2" time="0.000007"/>
+      </testsuite>
+      <testsuite name="RandomLib\Source\URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" tests="21" assertions="41" errors="0" warnings="0" failures="0" skipped="0" time="0.000337">
+        <testcase name="testGetStrength" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="51" assertions="1" time="0.000032"/>
+        <testsuite name="RandomLib\Source\URandomTest::testGenerate" tests="20" assertions="40" errors="0" warnings="0" failures="0" skipped="0" time="0.000305">
+          <testcase name="testGenerate with data set #0" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000029"/>
+          <testcase name="testGenerate with data set #1" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000026"/>
+          <testcase name="testGenerate with data set #2" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000015"/>
+          <testcase name="testGenerate with data set #3" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000014"/>
+          <testcase name="testGenerate with data set #4" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #5" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #6" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #7" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #8" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #9" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #10" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #11" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000015"/>
+          <testcase name="testGenerate with data set #12" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000014"/>
+          <testcase name="testGenerate with data set #13" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000016"/>
+          <testcase name="testGenerate with data set #14" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000015"/>
+          <testcase name="testGenerate with data set #15" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000016"/>
+          <testcase name="testGenerate with data set #16" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000015"/>
+          <testcase name="testGenerate with data set #17" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000015"/>
+          <testcase name="testGenerate with data set #18" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #19" class="RandomLib\Source\URandomTest" classname="RandomLib.Source.URandomTest" file="/workspace/test/Unit/RandomLib/Source/URandomTest.php" line="63" assertions="2" time="0.000013"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="RandomLib\Source\UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" tests="21" assertions="41" errors="0" warnings="0" failures="0" skipped="0" time="0.000282">
+        <testcase name="testGetStrength" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="51" assertions="1" time="0.000024"/>
+        <testsuite name="RandomLib\Source\UniqIDTest::testGenerate" tests="20" assertions="40" errors="0" warnings="0" failures="0" skipped="0" time="0.000259">
+          <testcase name="testGenerate with data set #0" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000018"/>
+          <testcase name="testGenerate with data set #1" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000015"/>
+          <testcase name="testGenerate with data set #2" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #3" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #4" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #5" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #6" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #7" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #8" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #9" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000011"/>
+          <testcase name="testGenerate with data set #10" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #11" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000012"/>
+          <testcase name="testGenerate with data set #12" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000014"/>
+          <testcase name="testGenerate with data set #13" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #14" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000014"/>
+          <testcase name="testGenerate with data set #15" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000014"/>
+          <testcase name="testGenerate with data set #16" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000014"/>
+          <testcase name="testGenerate with data set #17" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #18" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000013"/>
+          <testcase name="testGenerate with data set #19" class="RandomLib\Source\UniqIDTest" classname="RandomLib.Source.UniqIDTest" file="/workspace/test/Unit/RandomLib/Source/UniqIDTest.php" line="63" assertions="2" time="0.000016"/>
+        </testsuite>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
